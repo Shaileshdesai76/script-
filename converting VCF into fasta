@@ -1,0 +1,19 @@
+Converting the vcf file (MT) into fasta format
+
+
+#!/bin/bash
+
+# Input VCF file and reference FASTA file
+VCF="renamed_genome_asia_mt.vcf.gz"
+REFERENCE="rCRS.fasta"
+
+# File containing the sample names
+SAMPLES_FILE="consensus_name"
+
+# Loop through each sample in the samples.txt file
+while read SAMPLE; do
+    # Run bcftools consensus to generate consensus sequence for each sample
+    echo "Generating consensus for sample: $SAMPLE"
+    bcftools consensus -s "$SAMPLE" "$VCF" -f "$REFERENCE" > "${SAMPLE}_consensus.fasta"
+done < "$SAMPLES_FILE"
+
