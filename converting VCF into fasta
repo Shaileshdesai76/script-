@@ -17,3 +17,10 @@ while read SAMPLE; do
     bcftools consensus -s "$SAMPLE" "$VCF" -f "$REFERENCE" > "${SAMPLE}_consensus.fasta"
 done < "$SAMPLES_FILE"
 
+### Once this is done, you will several file name base on vcf sample file, but inside fasta all will be like >MT (or whatever chromosome or name), hence below command run separetely to change name by default ####
+
+
+for f in *.fasta; do
+    base=$(basename "$f" .fasta)           # extract SRR ID from filename
+    sed -i "s/^>MT/>$base/" "$f"          # replace >MT with >SRR_ID
+done
