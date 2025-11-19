@@ -2,20 +2,27 @@ Converting the vcf file (MT) into fasta format
 
 
 #!/bin/bash
-
-# Input VCF file and reference FASTA file
+# make sure that you have bcftools, samtools installed.
 VCF="renamed_genome_asia_mt.vcf.gz"
 REFERENCE="rCRS.fasta"
 
-# File containing the sample names
+# if vcf is not indexed
+[[ -f ${VCF}.tbi ]] || bcftools index "$VCF"
+
+# is fasta file is not indexed
+[[ -f ${REFERENCE}.fai ]] || samtools faidx "$REFERENCE"
+
+# this will generate the sample name directly from vcf file
 bcftools query -l "$VCF" > consensus_name
 SAMPLES_FILE="consensus_name"
 
-# Loop through each sample in the samples.txt file
-while read SAMPLE; do
-    # Run bcftools consensus to generate consensus sequence for each sample
+# Loop through samples, this is main commmand, and will run pretty fast, make sure that you use your latest bcftools version. 
+while read -r SAMPLE; do
     echo "Generating consensus for sample: $SAMPLE"
-    bcftools consensus -s "$SAMPLE" "$VCF" -f "$REFERENCE" > "${SAMPLE}_consensus.fasta"
+
+    bcftools consensus -s "$SAMPLE" -f "$REFERENCE" "$VCF" \
+        > "${SAMPLE}_consensus.fasta"
+
 done < "$SAMPLES_FILE"
 
 ### Once this is done, you will several file name base on vcf sample file, but inside fasta all will be like >MT (or whatever chromosome or name), hence below command run separetely to change name by default ####
