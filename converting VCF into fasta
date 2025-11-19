@@ -9,7 +9,7 @@ REFERENCE="rCRS.fasta"
 
 # File containing the sample names
 bcftools query -l "$VCF" > consensus_name
-SAMPLES="consensus_name"
+SAMPLES_FILE="consensus_name"
 
 # Loop through each sample in the samples.txt file
 while read SAMPLE; do
