@@ -1,0 +1,47 @@
+"Current analyses often involve large datasets of 400-500 samples. For visualizing these, phylogenetic trees created with tools like the handy and free iTOL are common. 
+However, manually coloring each node in iTOL can be tedious. To simplify this, I'm sharing a metadata file template below that demonstrates the required format. 
+This will allow you to create these files easily. It took me some time to figure this out, so I'm sharing it freely to help the scientific community. 
+I recommend using a text editor like Notepad++ to create or modify this file."
+
+
+##### below is format #############3
+
+DATASET_STYLE
+SEPARATOR TAB
+DATASET_LABEL	PopulationBranch
+COLOR	#000000
+WIDTH	3
+
+LEGEND_TITLE	Populations
+LEGEND_SHAPES	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+LEGEND_COLORS	#e41a1c	#377eb8	#4daf4a	#984ea3	#ff7f00	#a6cee3	#f781bf	#ffff33	#a65628	#1e90ff	#32cd32	#ff1493	#800000	#00FF00	#FF00FF	#800080	#008082	#000080
+LEGEND_LABELS	Africa	RBangladesh	REgypt	RIran	RIraq	RPakistan	RItaly	RNepal	WNepal	RIndia	SChina	SBangladesh	SLaos	STaiwan	SThailand	SIndonesia	RSrilanka	SVietnam
+DATA
+African_SRR4104498	branch	node	#e41a1c	2	normal
+African_SRR6154014	branch	node	#e41a1c	2	normal
+African_SRR6154015	branch	node	#e41a1c	2	normal
+RBangladesh_SRR27345275	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345285	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345296	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345342	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345351	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345364	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345375	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345385	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345413	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345414	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345415	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345416	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345417	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345418	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345419	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345422	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345426	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345427	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345428	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345439	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345440	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345450	branch	node	#377eb8	2	normal
+RBangladesh_SRR27345463	branch	node	#377eb8	2	normal
+
+so on.......
