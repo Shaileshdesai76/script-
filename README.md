@@ -1,4 +1,4 @@
-This is repository, which can small, small script for many day to day task. 
+This is repository, which contain small, small script for many day to day task. 
 
 This involves making the PCA using haplogroup frequency. 
 
