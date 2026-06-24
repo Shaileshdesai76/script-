@@ -9,7 +9,7 @@ def read_vcf_pandas(vcf_file):
           if line.startswith("#"):
             lines.append(line)
             continue
-          if line.startswith("2"): ## To filter chromsome wise, as file can be huge
+          if line.startswith("2"): ## To filter chromsome wise, as file can be huge, change this if you want to filter another chromsome
             lines.append(line)
         #lines = [l for l in f if not l.startswith('##')]
 
