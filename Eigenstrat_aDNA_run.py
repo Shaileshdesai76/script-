@@ -10,7 +10,7 @@ import os
 """ This pipeline helps in converting plink (bed,fam,bim) into eigenstrat, generally eigenstrat does not allow to convert the if Family ID and IND ID is more than 
 39 character, which is very common in aDNA, hence this script will allow you convert directly into usualble ind, geno and snp file for your downstream analysis such f3, D, f4 and Admixtools bases. 
 basically, it read fam file, convert familly id into number from 1 to sample number; convert into eigen format, then reconstrcut the ind file, and finally it map ind file indivudal ids to orignal fam individual IDS, then insert the family ID from orignnal fam file, so you dont have short the name each time, which i have done 10 time, before i made this scirpt with using AI helps. """
-
+""" run like this;  python3 Eigenstrat_aDNA_run.py par.PED.EIGENSTRAT      """
 # ------------------------------------------------------------
 # Read parameter file
 # ------------------------------------------------------------
